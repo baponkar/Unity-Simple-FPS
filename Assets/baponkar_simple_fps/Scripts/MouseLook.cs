@@ -11,7 +11,8 @@ namespace Baponkar.FPS.Simple
         #region Variables
         public Transform playerBody;
         public float mouseSensitivity= 100f;
-        float xRotation;
+        public float xRotation;
+        public float yRotation; //This is required only for showing rotation
         #endregion
 
         void Start()
@@ -26,9 +27,11 @@ namespace Baponkar.FPS.Simple
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
             xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation = Mathf.Clamp(xRotation, -80f, 90f);
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
+
+            yRotation = mouseX;
         }
     }
 }

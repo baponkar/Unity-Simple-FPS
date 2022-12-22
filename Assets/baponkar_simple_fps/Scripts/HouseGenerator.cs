@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Baponkar.FPS.Simple
 {
-    //[ExecuteInEditMode]
+    [ExecuteInEditMode]
     public class HouseGenerator : MonoBehaviour
     {
         public bool randomize;
